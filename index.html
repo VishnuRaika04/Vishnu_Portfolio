@@ -21,51 +21,9 @@
 <body>
   <!-- Existing code -->
 
-<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
-<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
 
-<script>
-  // Initialize Firebase
-    
- // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-const firebaseConfig = {
-  apiKey: "AIzaSyAp9FHuXrRGXEQ-xbJadypshgDSscDUZaQ",
-  authDomain: "vishnuportfolio04.firebaseapp.com",
-  databaseURL: "https://vishnuportfolio04-default-rtdb.firebaseio.com",
-  projectId: "vishnuportfolio04",
-  storageBucket: "vishnuportfolio04.appspot.com",
-  messagingSenderId: "893438336744",
-  appId: "1:893438336744:web:1930dbc11bb0435030f35d",
-  measurementId: "G-Q71SPHQW08"
-};
 
-  firebase.initializeApp(firebaseConfig);
 
-  // Handle form submission
-  document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault(); // Prevent default form submission
-    
-    // Get form values
-    var name = document.getElementById('name').value;
-    var email = document.getElementById('email').value;
-    var subject = document.getElementById('subject').value;
-    var message = document.getElementById('message').value;
-    
-    // Store form data in Firebase
-    firebase.database().ref('contacts').push({
-      name: name,
-      email: email,
-      subject: subject,
-      message: message
-    });
-    
-    // Clear form fields
-    document.getElementById('name').value = '';
-    document.getElementById('email').value = '';
-    document.getElementById('subject').value = '';
-    document.getElementById('message').value = '';
-  });
-</script>
 
 <!-- Remaining code -->
 
@@ -240,7 +198,7 @@ As an experienced web developer, I possess strong proficiency in HTML, CSS, and 
                 </div>
                 <div class="column right">
                     <div class="text">Message me</div>
-                    <form id="contact-form">
+                    <form id = "contact-form">
                         <div class="fields">
                             <div class="field name">
                                 <input type="text" id="name" placeholder="Name" required>
@@ -268,6 +226,53 @@ As an experienced web developer, I possess strong proficiency in HTML, CSS, and 
     <footer>
         <span>Created By <a href="https://github.com/VishnuRaika04">Vishnu Solanki Raika</a> | <span class="far fa-copyright"></span> 2023 All rights reserved.</span>
     </footer>
+
+
+    <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+    <script>
+        // Initialize Firebase
+          
+       // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      const firebaseConfig = {
+        apiKey: "AIzaSyAp9FHuXrRGXEQ-xbJadypshgDSscDUZaQ",
+        authDomain: "vishnuportfolio04.firebaseapp.com",
+        databaseURL: "https://vishnuportfolio04-default-rtdb.firebaseio.com",
+        projectId: "vishnuportfolio04",
+        storageBucket: "vishnuportfolio04.appspot.com",
+        messagingSenderId: "893438336744",
+        appId: "1:893438336744:web:1930dbc11bb0435030f35d",
+        measurementId: "G-Q71SPHQW08"
+      };
+      
+        firebase.initializeApp(firebaseConfig);
+      
+        // Handle form submission
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+          e.preventDefault(); // Prevent default form submission
+          
+          // Get form values
+          var name = document.getElementById('name').value;
+          var email = document.getElementById('email').value;
+          var subject = document.getElementById('subject').value;
+          var message = document.getElementById('message').value;
+          
+          // Store form data in Firebase
+          firebase.database().ref('contacts').push({
+            name: name,
+            email: email,
+            subject: subject,
+            message: message
+          });
+          
+          // Clear form fields
+          document.getElementById('name').value = '';
+          document.getElementById('email').value = '';
+          document.getElementById('subject').value = '';
+          document.getElementById('message').value = '';
+        });
+      </script>
 
     <script src="script.js"></script>
 </body>
